@@ -48,7 +48,8 @@ const images = {
   reactLogo: require("../assets/reactLogo.svg"),
   facebookLogo: require("../assets/facebook-logo.png"),
   instagramLogo: require("../assets/instagram-logo.jpg"),
-  lifecycle: require("../assets/react-lifecycle.png")
+  lifecycle: require("../assets/react-lifecycle.png"),
+  composition: require("../assets/composition.jpg")
 };
 
 preloader(images);
@@ -179,6 +180,7 @@ export default class Presentation extends React.Component {
            <Heading size={2} caps textColor="primary">
               Components composition
             </Heading>
+            <Image src={images.composition.replace("/", "")} height="550px"/>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
            <Heading size={1} caps textColor="primary">
