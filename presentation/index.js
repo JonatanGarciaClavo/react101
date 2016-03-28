@@ -18,6 +18,7 @@ import {
   List,
   Markdown,
   Quote,
+  S,
   Slide,
   Spectacle,
   Text
@@ -91,7 +92,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               What is it React?
             </Heading>
             <Layout>
@@ -113,7 +114,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               Virtual DOM
             </Heading>
             <List>
@@ -128,7 +129,7 @@ export default class Presentation extends React.Component {
             </Link>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               JSX
             </Heading>
             <List>
@@ -149,7 +150,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               Properties
             </Heading>
             <CodePane
@@ -160,7 +161,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               State
             </Heading>
             <CodePane
@@ -171,26 +172,61 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               Lifecycle
             </Heading>
             <Image src={images.lifecycle.replace("/", "")} height="550px"/>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
               Components composition
             </Heading>
             <Image src={images.composition.replace("/", "")} height="550px"/>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={1} caps textColor="primary">
+            <Heading size={2} caps textColor="primary">
+              Smart components
+            </Heading>
+            <List>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Are concerned with <S type="italic">how things work</S></ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">May contain both presentational and container components inside but usually don’t have any DOM markup of their own except for some wrapping divs, and never have any styles</ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Provide the data and behavior to presentational or other container components</ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Call Flux actions and provide these as callbacks to dumb components</ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Are often stateful, as they tend to serve as data sources</ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Are usually generated using higher order components such as <S type="italic">connect() </S> from React Redux, <S type="italic">createContainer() </S> from Relay, or <S type="italic">Container.create() </S> from Flux Utils, rather than written by hand</ListItem>
+              <ListItem textSize="0.9em" textFont="secundary" textColor="primary">Examples: UserPage, FollowersSidebar, StoryContainer, FollowedUserList</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
+            <Heading size={2} caps textColor="primary">
+              Dumb components
+            </Heading>
+            <List>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Are concerned with <S type="italic">how things look</S></ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">May contain both presentational and container components inside, and usually have some DOM markup and styles of their own</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Have no dependencies on the rest of the app, such as Flux actions or stores</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Don’t specify how the data is loaded or mutated</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Receive data and callbacks exclusively via props</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Rarely have their own state (when they do, it’s UI state rather than data)</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Are written as functional components unless they need state, lifecycle hooks, or performance optimizations</ListItem>
+              <ListItem textSize="1em" textFont="secundary" textColor="primary">Examples: Page, Sidebar, Story, UserInfo, List...</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
+            <Heading caps textColor="primary">
               Demo
             </Heading>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-           <Heading size={2} caps textColor="primary">
+            <Heading size={1} caps textColor="primary">
               Thanks
             </Heading>
+            <Link href="https://github.com/JonatanGarciaClavo/react101">
+              <Text padding="100px 0 0 0" italic textFont="tertiary" textColor="white">Docs and examples: https://github.com/JonatanGarciaClavo/react101</Text>
+            </Link>
+            <Link href="mailto:jonatan.garcia@mobgen.com">
+              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">Email: jonatan.garcia@mobgen.com</Text>
+            </Link>
           </Slide>
         </Deck>
       </Spectacle>
