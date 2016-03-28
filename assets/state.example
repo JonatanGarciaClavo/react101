@@ -1,0 +1,22 @@
+var HelloComponent = React.createClass({
+  getInitialState : function() {
+    return {
+      name : "chris"
+    };
+  },
+  handleClick : function() {
+    this.setState({
+      name : "bob"
+    });
+  },
+  render : function() {
+    return <div onClick={this.handleClick}>
+      hello {this.state.name}
+    </div>;
+  }
+});
+
+React.renderComponent(
+  <HelloComponent />,
+  document.body
+);
