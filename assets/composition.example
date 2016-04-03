@@ -1,0 +1,37 @@
+class CommentList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <ul> {this.props.comments.map(renderComment)} </ul>;
+  }
+
+  renderComment({body, author}) {
+    return <li>{body}—{author}</li>;
+  }
+}
+
+class CommentListContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = { comments: [] }
+  }
+  componentDidMount() {
+    $.ajax({
+      url: "/my-comments.json",
+      dataType: 'json',
+      success: function(comments) {
+        this.setState({comments: comments});
+      }.bind(this)
+    });
+  }
+  render() {
+    return <CommentList comments={this.state.comments} />;
+  }
+}
+
+React.renderComponent(
+  <CommentList />,
+  document.body
+);

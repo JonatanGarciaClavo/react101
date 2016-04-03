@@ -23,6 +23,8 @@ import {
   Spectacle,
   Text
 } from "spectacle";
+// Import CodeSlide
+import CodeSlide from 'spectacle-code-slide';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -149,17 +151,16 @@ export default class Presentation extends React.Component {
               textSize="0.75em"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
-            <Heading size={2} caps textColor="primary">
-              Properties
-            </Heading>
-            <CodePane
-              lang="jsx"
-              source={require("raw!../assets/props.example")}
-              margin="20px auto"
-              textSize="0.75em"
-            />
-          </Slide>
+          <CodeSlide
+            transition={["zoom", "fade"]}
+            lang="js"
+            code={require("raw!../assets/props.example")}
+            ranges={[
+              { loc: [0, 15], title: "Properties"},
+              { loc: [11, 15], title: "Properties", note: "Initialize your props"},
+              { loc: [4, 6], title: "Properties", note: "Use props"}
+            ]}
+          />
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={2} caps textColor="primary">
               State
@@ -171,6 +172,16 @@ export default class Presentation extends React.Component {
               textSize="0.5em"
             />
           </Slide>
+          <CodeSlide
+            transition={["zoom", "fade"]}
+            lang="js"
+            code={require("raw!../assets/state.example")}
+            ranges={[
+              { loc: [1, 6], note: "Initialize your state"},
+              { loc: [12, 16], note: "Use state"},
+              { loc: [6, 16], note: "Set new state"}
+            ]}
+          />
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={2} caps textColor="primary">
               Lifecycle
@@ -183,6 +194,16 @@ export default class Presentation extends React.Component {
             </Heading>
             <Image src={images.composition.replace("/", "")} height="550px"/>
           </Slide>
+          <CodeSlide
+            transition={["zoom", "fade"]}
+            lang="js"
+            code={require("raw!../assets/composition.example")}
+            ranges={[
+              { loc: [14, 32]},
+              { loc: [0, 13], note: "CommentList component"},
+              { loc: [33, 37], note: "Initialize"}
+            ]}
+          />
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={2} caps textColor="primary">
               Smart components
@@ -216,6 +237,12 @@ export default class Presentation extends React.Component {
             <Heading caps textColor="primary">
               Demo
             </Heading>
+            <Link href="https://github.com/gaearon/react-hot-boilerplate.git">
+              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">https://github.com/gaearon/react-hot-boilerplate.git</Text>
+            </Link>
+            <Link href="https://github.com/JonatanGarciaClavo/react-todo-plain.git">
+              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">https://github.com/JonatanGarciaClavo/react-todo-plain.git</Text>
+            </Link>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={1} caps textColor="primary">
