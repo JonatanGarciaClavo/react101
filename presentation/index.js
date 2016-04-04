@@ -186,16 +186,27 @@ export default class Presentation extends React.Component {
             </Heading>
             <Image src={images.composition.replace("/", "")} height="550px"/>
           </Slide>
-          <CodeSlide
-            transition={["zoom", "fade"]}
-            lang="js"
-            code={require("raw!../assets/composition.example")}
-            ranges={[
-              { loc: [14, 32]},
-              { loc: [0, 13], note: "CommentList component"},
-              { loc: [33, 37], note: "Initialize"}
-            ]}
-          />
+          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
+            <Heading size={2} caps textColor="primary">
+              Components composition
+            </Heading>
+            <Layout>
+            <Fit>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/composition.example")}
+              textSize="0.45em"
+            />
+            </Fit>
+            <Fit>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/composition2.example")}
+              textSize="0.45em"
+            />
+            </Fit>
+            </Layout>
+          </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={2} caps textColor="primary">
               Smart components
