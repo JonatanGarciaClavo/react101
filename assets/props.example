@@ -1,5 +1,5 @@
-var Photo = React.createClass({
-  render: function() {
+class Photo extends React.Component {
+  render() {
     return (
       <div className='photo'>
         <img src={this.props.imageURL} />
@@ -7,7 +7,7 @@ var Photo = React.createClass({
       </div>
     );
   }
-});
+}
 React.render(
 	<Photo
 		imageURL='http://tinyurl.com/lkevsb9'

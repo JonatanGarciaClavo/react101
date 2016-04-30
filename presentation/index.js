@@ -81,6 +81,7 @@ export default class Presentation extends React.Component {
               <Appear><ListItem textFont="secundary" textColor="primary">JSX</ListItem></Appear>
               <Appear><ListItem textFont="secundary" textColor="primary">Properties</ListItem></Appear>
               <Appear><ListItem textFont="secundary" textColor="primary">State</ListItem></Appear>
+              <Appear><ListItem textFont="secundary" textColor="primary">Events</ListItem></Appear>
               <Appear><ListItem textFont="secundary" textColor="primary">Lifecycle</ListItem></Appear>
               <Appear><ListItem textFont="secundary" textColor="primary">Components composition</ListItem></Appear>
             </List>
@@ -169,11 +170,25 @@ export default class Presentation extends React.Component {
             lang="js"
             code={require("raw!../assets/state.example")}
             ranges={[
-              { loc: [1, 6], note: "Initialize your state"},
-              { loc: [12, 16], note: "Use state"},
-              { loc: [6, 16], note: "Set new state"}
+              { loc: [1, 8], note: "Initialize your state"},
+              { loc: [13, 18], note: "Use state"},
+              { loc: [8, 13], note: "Set new state"}
             ]}
           />
+          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
+            <Heading size={2} caps textColor="primary">
+              Events
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/events.example")}
+              margin="20px auto"
+              textSize="0.5em"
+            />
+            <Link href="https://facebook.github.io/react/docs/events.html">
+              <Text italic textFont="tertiary" textColor="white">More info about events</Text>
+            </Link>
+          </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={2} caps textColor="primary">
               Lifecycle
@@ -240,12 +255,21 @@ export default class Presentation extends React.Component {
             <Heading caps textColor="primary">
               Demo
             </Heading>
-            <Link href="https://github.com/gaearon/react-hot-boilerplate.git">
-              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">https://github.com/gaearon/react-hot-boilerplate.git</Text>
-            </Link>
-            <Link href="https://github.com/JonatanGarciaClavo/react-todo-plain.git">
-              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">https://github.com/JonatanGarciaClavo/react-todo-plain.git</Text>
-            </Link>
+            <CodePane
+              lang="bash"
+              source={require("raw!../assets/demo.example")}
+              textSize="0.75em"
+            />
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
+            <Heading caps textColor="primary">
+              Exercise resolution
+            </Heading>
+            <CodePane
+              lang="bash"
+              source={require("raw!../assets/exercise-steps.example")}
+              textSize="0.65em"
+            />
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor={bgColor}>
             <Heading size={1} caps textColor="primary">
@@ -253,6 +277,9 @@ export default class Presentation extends React.Component {
             </Heading>
             <Link href="https://github.com/JonatanGarciaClavo/react101">
               <Text padding="100px 0 0 0" italic textFont="tertiary" textColor="white">Docs and examples: https://github.com/JonatanGarciaClavo/react101</Text>
+            </Link>
+            <Link href="https://github.com/JonatanGarciaClavo/react-todo-plain.git">
+              <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">Exercise resolution: https://github.com/JonatanGarciaClavo/react-todo-plain.git</Text>
             </Link>
             <Link href="mailto:jonatan.garcia@mobgen.com">
               <Text padding="50px 0 0 0" italic textFont="tertiary" textColor="white">Email: jonatan.garcia@mobgen.com</Text>

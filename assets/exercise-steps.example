@@ -1,0 +1,5 @@
+git clone https://github.com/JonatanGarciaClavo/react-todo-plain.git
+cd react-todo-plain
+npm install
+npm run start
+open browser http://localhost:3001

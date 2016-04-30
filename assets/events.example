@@ -1,0 +1,19 @@
+class UserList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isActive: false };
+    this.onToggleClick = this.onToggleClick.bind(this);
+  }
+  onToggleClick(event) {
+    this.setState({ isActive: !this.state.isActive });
+  }
+  render() {
+    const isActive = this.state.isActive;
+    return (
+      <div>
+        <span>{isActive ? 'Active' : 'Disabled'}</span>
+        <button onClick={this.onToggleClick}>Toggle Active</button>
+      </div>
+    );
+  }
+};

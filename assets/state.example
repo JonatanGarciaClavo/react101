@@ -1,20 +1,22 @@
-var HelloComponent = React.createClass({
-  getInitialState : function() {
-    return {
-      name : "chris"
+class HelloComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'chris'
     };
-  },
-  handleClick : function() {
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
     this.setState({
-      name : "bob"
+      name: 'bob'
     });
-  },
-  render : function() {
+  }
+  render() {
     return <div onClick={this.handleClick}>
       hello {this.state.name}
     </div>;
   }
-});
+}
 
 React.renderComponent(
   <HelloComponent />,
